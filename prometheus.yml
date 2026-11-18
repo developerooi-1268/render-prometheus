@@ -13,9 +13,11 @@ scrape_configs:
       - targets: ["localhost:10000"]
 
   - job_name: autumns-ambrosia
+    scrape_interval: 60s
+    scrape_timeout: 30s
     metrics_path: /metrics
     scheme: https
     static_configs:
       - targets:
-          - "autumns-ambrosia-order1.onrender.com:10000"
+          - "autumns-ambrosia-order1.onrender.com:443"
           
