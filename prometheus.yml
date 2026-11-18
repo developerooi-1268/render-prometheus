@@ -1,11 +1,19 @@
 global:
   scrape_interval: 60s
+
 remote_write:
   - url: https://prometheus-prod-37-prod-ap-southeast-1.grafana.net/api/prom/push
     basic_auth:
       username: 3731030
       password: glc_eyJvIjoiMTk3MTM2MyIsIm4iOiJzdGFjay0xOTAzNDA2LWFsbG95LXJlbmRlci1wcm9tZXRoZXVzIiwiayI6IlRTcDNCTWdRMHowQ3o2cTQzM0IyTFk0MyIsIm0iOnsiciI6InByb2QtYXAtc291dGhlYXN0LTEifX0=
+
 scrape_configs:
   - job_name: node
     static_configs:
       - targets: ["localhost:10000"]
+
+  - job_name: flask-backend
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - ["autumns-ambrosia-order1:10000"]
