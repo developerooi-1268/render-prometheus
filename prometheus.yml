@@ -17,5 +17,5 @@ scrape_configs:
     scheme: https
     static_configs:
       - targets:
-          - "autumns-ambrosia-order1:10000"
+          - "autumns-ambrosia-order1.onrender.com:10000"
           
