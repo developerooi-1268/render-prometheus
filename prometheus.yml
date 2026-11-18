@@ -12,8 +12,10 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:10000"]
 
-  - job_name: flask-backend
+  - job_name: autumns-ambrosia
     metrics_path: /metrics
+    scheme: https
     static_configs:
       - targets:
-          - ["autumns-ambrosia-order1:10000"]
+          - "autumns-ambrosia-order1:10000"
+          
